@@ -1,0 +1,25 @@
+# Flask 및 서버
+flask==3.0.0
+flask-sqlalchemy==3.1.1
+flask-cors==4.0.0
+gunicorn==21.2.0
+
+# DB (PostgreSQL)
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+
+# 인증 (JWT)
+pyjwt==2.9.0
+cryptography # PyJWT가 RS256 알고리즘(공개키/개인키)을 사용하는 데 필요
+
+# LLM 엔진 (LangChain + OpenAI + FAISS)
+langchain
+langchain-community
+langchain-core
+langchain-openai
+langchain-text-splitters
+openai
+tiktoken
+faiss-cpu
+python-dotenv
+pydantic

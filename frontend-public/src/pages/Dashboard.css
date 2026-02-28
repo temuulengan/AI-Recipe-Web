@@ -1,0 +1,338 @@
+.dashboard-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    font-family: 'Inter', sans-serif;
+    color: #333;
+  }
+  
+  /* --- Profile Section --- */
+  .profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2b6cb0;
+    margin-bottom: 15px;
+  }
+  
+  .profile-section h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .user-nickname {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 5px;
+  }
+  
+  /* --- Role Badge --- */
+  .role-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .role-badge.admin {
+    background: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fbbf24;
+  }
+  
+  .role-badge.user {
+    background: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #60a5fa;
+  }
+  
+  /* --- Section Titles --- */
+  .dashboard-container h2 {
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: #2b6cb0;
+    font-weight: 600;
+    border-left: 4px solid #2b6cb0;
+    padding-left: 10px;
+  }
+  
+  /* --- Card Sections --- */
+  .account-info,
+  .recent-activity,
+  .account-settings {
+    margin-bottom: 40px;
+    background: #f9fafc;
+    padding: 20px 25px;
+    border-radius: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  
+  .account-info p {
+    font-size: 1rem;
+    margin: 6px 0;
+    color: #444;
+  }
+  
+  /* --- Activity List --- */
+  .recent-activity ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .recent-activity li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid #4caf50;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+  }
+  
+  .recent-activity li:hover {
+    background: #f3f9f3;
+    transform: translateX(3px);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* --- Buttons --- */
+  .dashboard-button {
+    display: inline-block;
+    margin-right: 15px;
+    background: #2b6cb0;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background 0.2s ease-in-out, transform 0.1s ease-in-out;
+  }
+  
+  .dashboard-button:hover {
+    background: #245a99;
+    transform: scale(1.03);
+  }
+  
+  .dashboard-button.logout {
+    background: #e53e3e;
+  }
+  
+  .dashboard-button.logout:hover {
+    background: #c53030;
+  }
+
+  .dashboard-button.delete-account {
+    background: #dc2626;
+    margin-right: 0;
+  }
+  
+  .dashboard-button.delete-account:hover {
+    background: #b91c1c;
+  }
+
+  .dashboard-button.delete-account:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  /* --- Danger Zone --- */
+  .account-danger-zone {
+    margin-top: 40px;
+    padding: 25px;
+    background: #fef2f2;
+    border: 2px solid #fca5a5;
+    border-radius: 12px;
+  }
+
+  .account-danger-zone h2 {
+    color: #dc2626;
+    border-left-color: #dc2626;
+  }
+
+  .danger-warning {
+    color: #991b1b;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+  }
+  
+  /* --- Not Logged In --- */
+  .dashboard-container h2 {
+    text-align: center;
+  }
+  
+  .dashboard-container a {
+    color: #2b6cb0;
+    text-decoration: none;
+  }
+  
+  .dashboard-container a:hover {
+    text-decoration: underline;
+  }
+
+  /* --- Edit Profile Modal --- */
+  .edit-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  .edit-modal {
+    background: white;
+    border-radius: 16px;
+    padding: 35px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .edit-modal h2 {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #2b6cb0;
+    font-size: 1.6rem;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #2b6cb0;
+    box-shadow: 0 0 0 3px rgba(43, 108, 176, 0.1);
+  }
+
+  .modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+  }
+
+  .cancel-button,
+  .save-button {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .cancel-button {
+    background: #e2e8f0;
+    color: #333;
+  }
+
+  .cancel-button:hover:not(:disabled) {
+    background: #cbd5e0;
+  }
+
+  .save-button {
+    background: #2b6cb0;
+    color: white;
+  }
+
+  .save-button:hover:not(:disabled) {
+    background: #245a99;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(43, 108, 176, 0.3);
+  }
+
+  .cancel-button:disabled,
+  .save-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  /* --- Password Requirements --- */
+  .password-requirements {
+    background: #f0f4ff;
+    border: 1px solid #c7d2fe;
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .password-requirements p {
+    margin: 0 0 10px 0;
+    color: #1e40af;
+    font-size: 0.9rem;
+  }
+
+  .password-requirements ul {
+    margin: 0;
+    padding-left: 20px;
+    list-style-type: disc;
+  }
+
+  .password-requirements li {
+    color: #4b5563;
+    font-size: 0.85rem;
+    margin: 4px 0;
+  }
+  
